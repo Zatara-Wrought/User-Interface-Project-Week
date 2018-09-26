@@ -1,0 +1,86 @@
+.Home-Page {
+  @media @phone {
+    max-width: 500px;
+    .size(100%, auto);
+  }
+
+  .landing-overlay {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .landing-text {
+      position: absolute;
+      color: white;
+      font-size: 6.4rem;
+      line-height: 7.5rem;
+      left: 50px;
+      bottom: 40px;
+      font-weight: bold;
+    }
+  }
+
+  .Top-Content {
+    section {
+      padding: 0 8%;
+      display: flex;
+      margin: 40px 0;
+      .content {
+        .flexbox(space-around, flex-start);
+        flex-direction: column;
+        margin: 5% 0;
+      }
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      p {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 500;
+        padding: 5% 0;
+      }
+      button {
+        background: white;
+        border: 1px solid black;
+        padding: 10px 20px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .Main-Content {
+    padding: 0 8%;
+    section {
+      .content3,
+      .content4,
+      .content5 {
+        position: relative;
+        margin-top: 3%;
+        img {
+          width: 100%;
+        }
+        h2 {
+          font-size: 2.5rem;
+          font-weight: normal;
+          position: absolute;
+          right: 0px;
+          bottom: -4rem;
+          margin: 0;
+          background: @r-p-c;
+          padding: 3rem 4.8rem;
+          letter-spacing: 0.75rem;
+        }
+      }
+      p {
+        padding-top: 6%;
+        margin: 4% auto;
+        width: 55%;
+        line-height: 2.5rem;
+      }
+    }
+    h4 {
+      margin: 20px 0;
+    }
+  }
+}

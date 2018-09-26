@@ -1,0 +1,44 @@
+footer {
+  background: @foo-bg;
+  padding: 4% 4% 0;
+  color: white;
+  font-size: 1.2rem;
+  .Footer-Content {
+    .flexbox(space-around, unset);
+    margin-bottom: 2%;
+    h3 {
+      font-weight: bold;
+    }
+  }
+  .Contact-Invite {
+    h3 {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    input {
+      margin: 1% 1%;
+      padding: 1.1rem 0.8rem;
+      width: 100%;
+      font-size: 1.6rem;
+      border-radius: 5px;
+      border: 1px transparent;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .New-York,
+  .Florida,
+  .California {
+    padding: auto 4%;
+
+    p {
+      padding: 3% 20% 3% 1%;
+    }
+  }
+  .Copyright {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1%;
+  }
+}

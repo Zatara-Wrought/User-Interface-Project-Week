@@ -1,1 +1,318 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+/* Your Code Goes Here */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background: #ffffff;
+  color: #222222;
+}
+body {
+  font-family: Roboto, Arial, sans-serif;
+  color: inherit;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  color: #ffffff;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #ffffff;
+}
+h4 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #9aa5b0;
+  padding: 10px 75px;
+}
+header h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #ffffff;
+}
+header nav {
+  display: none;
+}
+footer {
+  background: #828282;
+  padding: 4% 4% 0;
+  color: white;
+  font-size: 1.2rem;
+}
+footer .Footer-Content {
+  display: flex;
+  justify-content: space-around;
+  align-items: unset;
+  margin-bottom: 2%;
+}
+footer .Footer-Content h3 {
+  font-weight: bold;
+}
+footer .Contact-Invite h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+footer .Contact-Invite input {
+  margin: 1% 1%;
+  padding: 1.1rem 0.8rem;
+  width: 100%;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: 1px transparent;
+}
+footer .Contact-Invite p {
+  font-size: 1.2rem;
+}
+footer .New-York,
+footer .Florida,
+footer .California {
+  padding: auto 4%;
+}
+footer .New-York p,
+footer .Florida p,
+footer .California p {
+  padding: 3% 20% 3% 1%;
+}
+footer .Copyright {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .Home-Page {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+}
+.Home-Page .landing-overlay {
+  position: relative;
+}
+.Home-Page .landing-overlay img {
+  width: 100%;
+}
+.Home-Page .landing-overlay .landing-text {
+  position: absolute;
+  color: white;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  left: 50px;
+  bottom: 40px;
+  font-weight: bold;
+}
+.Home-Page .Top-Content section {
+  padding: 0 8%;
+  display: flex;
+  margin: 40px 0;
+}
+.Home-Page .Top-Content section .content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 5% 0;
+}
+.Home-Page .Top-Content section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.Home-Page .Top-Content section p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  padding: 5% 0;
+}
+.Home-Page .Top-Content section button {
+  background: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+.Home-Page .Main-Content {
+  padding: 0 8%;
+}
+.Home-Page .Main-Content section .content3,
+.Home-Page .Main-Content section .content4,
+.Home-Page .Main-Content section .content5 {
+  position: relative;
+  margin-top: 3%;
+}
+.Home-Page .Main-Content section .content3 img,
+.Home-Page .Main-Content section .content4 img,
+.Home-Page .Main-Content section .content5 img {
+  width: 100%;
+}
+.Home-Page .Main-Content section .content3 h2,
+.Home-Page .Main-Content section .content4 h2,
+.Home-Page .Main-Content section .content5 h2 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  position: absolute;
+  right: 0px;
+  bottom: -4rem;
+  margin: 0;
+  background: #d8d8d8;
+  padding: 3rem 4.8rem;
+  letter-spacing: 0.75rem;
+}
+.Home-Page .Main-Content section p {
+  padding-top: 6%;
+  margin: 4% auto;
+  width: 55%;
+  line-height: 2.5rem;
+}
+.Home-Page .Main-Content h4 {
+  margin: 20px 0;
+}
