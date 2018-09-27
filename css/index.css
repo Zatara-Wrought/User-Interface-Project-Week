@@ -166,7 +166,7 @@ h4 {
   font-weight: bold;
 }
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 }
@@ -259,10 +259,16 @@ footer .Copyright {
 }
 .Home-Page .Top-Content section .content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   margin: 5% 0;
+}
+.Home-Page .Top-Content section .content1 {
+  margin-right: 8%;
+}
+.Home-Page .Top-Content section .content2 {
+  margin-left: 8%;
 }
 .Home-Page .Top-Content section h2 {
   font-size: 2.5rem;
@@ -300,12 +306,15 @@ footer .Copyright {
   font-size: 2.5rem;
   font-weight: normal;
   position: absolute;
-  right: 0px;
   bottom: -4rem;
   margin: 0;
   background: #d8d8d8;
   padding: 3rem 4.8rem;
   letter-spacing: 0.75rem;
+}
+.Home-Page .Main-Content section .content3,
+.Home-Page .Main-Content section .content5 {
+  right: 0px;
 }
 .Home-Page .Main-Content section p {
   padding-top: 6%;
@@ -314,5 +323,47 @@ footer .Copyright {
   line-height: 2.5rem;
 }
 .Home-Page .Main-Content h4 {
+  margin: 20px 0;
+}
+.services-page {
+  margin: 0 auto;
+  max-width: 1036px;
+}
+.services-page .page-wrapper {
+  margin: 0 10%;
+}
+.services-page .page-wrapper > * {
+  margin: 30px 0;
+}
+.services-page .page-wrapper .intro-section {
+  font-size: 1.6rem;
+}
+.services-page .page-wrapper .tabs {
+  display: flex;
+  justify-content: space-around;
+}
+.services-page .page-wrapper .tabs .tab {
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.services-page .page-wrapper .content {
+  display: flex;
+}
+.services-page .page-wrapper .content > * {
+  width: 50%;
+}
+.services-page .page-wrapper .content h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.services-page .page-wrapper .content p {
+  font-size: 1.6rem;
+}
+.services-page .page-wrapper .content .text-content {
+  margin-right: 30px;
+}
+.services-page .page-wrapper .content .text-content > * {
   margin: 20px 0;
 }
