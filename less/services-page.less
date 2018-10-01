@@ -1,18 +1,26 @@
-.services-page {
+.Services-Page {
   margin: 0 auto;
-  max-width: 1036px;
+  max-width: 1000px;
 
-  .jumbotron-overlay {
-    left: 87px;
-    bottom: 13px;
+  .landing-overlay {
+    position: relative;
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .landing-text {
+      position: absolute;
+      color: white;
+      font-size: 6.4rem;
+      line-height: 7.5rem;
+      left: 50px;
+      bottom: 40px;
+      font-weight: bold;
+    }
   }
 
   .page-wrapper {
     margin: 0 8.7%;
-
-    > * {
-      margin: 30px 0;
-    }
 
     .intro-section {
       font-size: 1.6rem;

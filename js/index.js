@@ -55,3 +55,53 @@ class Tab {
 let tabs = document.querySelectorAll(".tab");
 tabs = Array.from(tabs).map(tab => new Tab(tab));
 tabs[0].selectTab();
+
+//carousel
+class Carousel {
+  constructor(element) {
+    this.element = element;
+    this.leftButton = element.querySelector(".left-button");
+    this.rightButton = element.querySelector(".right-button");
+    this.currentImage = 0;
+    this.image = element.querySelectorAll("img")[this.currentImage];
+    this.image.style.display = "flex";
+    this.rightButton.addEventListener("click", () => {
+      this.nextImage();
+    });
+    this.leftButton.addEventListener("click", () => {
+      this.prevImage();
+    });
+  }
+  nextImage() {
+    if (
+      this.currentImage <
+      Array.from(document.querySelectorAll(".services img")).length - 1
+    ) {
+      this.currentImage++;
+      let images = document.querySelectorAll(".services img");
+      images.forEach(item => {
+        item.style.display = "none";
+      });
+      let displayImage = document.querySelectorAll(".services img")[
+        this.currentImage
+      ];
+      displayImage.style.display = "flex";
+    }
+  }
+  prevImage() {
+    if (this.currentImage > 0) {
+      this.currentImage--;
+      let images = document.querySelectorAll(".services img");
+      images.forEach(item => {
+        item.style.display = "none";
+      });
+      let displayImage = document.querySelectorAll(".services img")[
+        this.currentImage
+      ];
+      displayImage.style.display = "flex";
+    }
+  }
+}
+
+let carousel = document.querySelector(".services");
+carousel = new Carousel(carousel);

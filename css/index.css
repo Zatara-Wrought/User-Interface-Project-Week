@@ -136,6 +136,8 @@ table {
 }
 * {
   box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 html {
   font-size: 62.5%;
@@ -165,10 +167,16 @@ h4 {
   font-size: 2rem;
   font-weight: bold;
 }
-.container {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
+.mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: initial;
+  }
 }
 header {
   display: flex;
@@ -176,59 +184,49 @@ header {
   align-items: center;
   background: #9aa5b0;
   padding: 10px 75px;
+  flex-wrap: nowrap;
 }
 header h1 {
   font-weight: bold;
   font-size: 2.4rem;
   color: #ffffff;
 }
-header nav {
-  display: none;
+header .expanded {
+  z-index: 1000;
 }
-footer {
-  background: #828282;
-  padding: 4% 4% 0;
-  color: white;
-  font-size: 1.2rem;
+header .expanded,
+header .non-expanded {
+  cursor: pointer;
 }
-footer .Footer-Content {
-  display: flex;
-  justify-content: space-around;
-  align-items: unset;
-  margin-bottom: 2%;
-}
-footer .Footer-Content h3 {
-  font-weight: bold;
-}
-footer .Contact-Invite h3 {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-footer .Contact-Invite input {
-  margin: 1% 1%;
-  padding: 1.1rem 0.8rem;
-  width: 100%;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  border: 1px transparent;
-}
-footer .Contact-Invite p {
-  font-size: 1.2rem;
-}
-footer .New-York,
-footer .Florida,
-footer .California {
-  padding: auto 4%;
-}
-footer .New-York p,
-footer .Florida p,
-footer .California p {
-  padding: 3% 20% 3% 1%;
-}
-footer .Copyright {
+header .menu-modal {
   display: flex;
   justify-content: center;
-  padding-bottom: 1%;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: grey;
+  z-index: 10;
+}
+header .menu-modal .nav-links {
+  display: flex;
+  flex-direction: column;
+}
+header .menu-modal a {
+  position: relative;
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 25px;
+  text-decoration: none;
+}
+header .menu-modal a:hover {
+  color: black;
+}
+header .modal-hidden {
+  display: none;
 }
 @media (max-width: 500px) {
   .Home-Page {
@@ -242,6 +240,7 @@ footer .Copyright {
 }
 .Home-Page .landing-overlay img {
   width: 100%;
+  margin: 0 auto;
 }
 .Home-Page .landing-overlay .landing-text {
   position: absolute;
@@ -251,6 +250,13 @@ footer .Copyright {
   left: 50px;
   bottom: 40px;
   font-weight: bold;
+}
+@media (max-width: 500px) {
+  .Home-Page .landing-overlay .landing-text {
+    font-size: 3.5rem;
+    left: 4%;
+    bottom: 20px;
+  }
 }
 .Home-Page .Top-Content section {
   padding: 0 8%;
@@ -286,6 +292,32 @@ footer .Copyright {
   padding: 10px 20px;
   font-weight: 500;
 }
+@media (max-width: 500px) {
+  .Home-Page .Top-Content {
+    margin: 7% 1% 0;
+  }
+  .Home-Page .Top-Content section {
+    flex-direction: column;
+    margin: 5% 2%;
+  }
+  .Home-Page .Top-Content section .content1,
+  .Home-Page .Top-Content section .content2 {
+    margin-top: 4%;
+  }
+  .Home-Page .Top-Content section .img-1 {
+    order: -1;
+  }
+  .Home-Page .Top-Content section .img-1,
+  .Home-Page .Top-Content section .img-2 {
+    margin: 0;
+  }
+  .Home-Page .Top-Content section img {
+    width: 100%;
+  }
+  .Home-Page .Top-Content section button {
+    width: 100%;
+  }
+}
 .Home-Page .Main-Content {
   padding: 0 8%;
 }
@@ -312,9 +344,30 @@ footer .Copyright {
   padding: 3rem 4.8rem;
   letter-spacing: 0.75rem;
 }
-.Home-Page .Main-Content section .content3,
-.Home-Page .Main-Content section .content5 {
+.Home-Page .Main-Content section .content3 h2.right,
+.Home-Page .Main-Content section .content4 h2.right,
+.Home-Page .Main-Content section .content5 h2.right {
   right: 0px;
+}
+.Home-Page .Main-Content section .content3 h2.left,
+.Home-Page .Main-Content section .content4 h2.left,
+.Home-Page .Main-Content section .content5 h2.left {
+  left: 0px;
+}
+@media (max-width: 500px) {
+  .Home-Page .Main-Content section .content3 h2.right,
+  .Home-Page .Main-Content section .content4 h2.right,
+  .Home-Page .Main-Content section .content5 h2.right,
+  .Home-Page .Main-Content section .content3 h2.left,
+  .Home-Page .Main-Content section .content4 h2.left,
+  .Home-Page .Main-Content section .content5 h2.left {
+    right: 4%;
+    left: 4%;
+    width: 95%;
+    bottom: -90px;
+    padding: 7% 4%;
+    text-align: center;
+  }
 }
 .Home-Page .Main-Content section p {
   padding-top: 6%;
@@ -322,48 +375,237 @@ footer .Copyright {
   width: 55%;
   line-height: 2.5rem;
 }
+@media (max-width: 500px) {
+  .Home-Page .Main-Content section .text {
+    margin: 88px 0 45px;
+  }
+  .Home-Page .Main-Content section p {
+    width: 100%;
+    line-height: 2.4rem;
+    font-size: 2rem;
+  }
+}
 .Home-Page .Main-Content h4 {
   margin: 20px 0;
 }
-.services-page {
+@media (max-width: 500px) {
+  .Home-Page .Main-Content {
+    margin: 0 1%;
+  }
+  .Home-Page .Main-Content h2 {
+    margin: 40px 0 0 3%;
+  }
+  .Home-Page .Main-Content section {
+    margin: 20px 0;
+  }
+  .Home-Page .Main-Content section .content3,
+  .Home-Page .Main-Content section .content4,
+  .Home-Page .Main-Content section .content5 {
+    margin-bottom: 100px;
+  }
+}
+.Services-Page {
   margin: 0 auto;
-  max-width: 1036px;
+  max-width: 1000px;
 }
-.services-page .page-wrapper {
-  margin: 0 10%;
+.Services-Page .landing-overlay {
+  position: relative;
 }
-.services-page .page-wrapper > * {
-  margin: 30px 0;
+.Services-Page .landing-overlay img {
+  width: 100%;
+  margin: 0 auto;
 }
-.services-page .page-wrapper .intro-section {
-  font-size: 1.6rem;
-}
-.services-page .page-wrapper .tabs {
-  display: flex;
-  justify-content: space-around;
-}
-.services-page .page-wrapper .tabs .tab {
-  padding: 10px;
-  border: 1px solid black;
-  font-size: 1.6rem;
+.Services-Page .landing-overlay .landing-text {
+  position: absolute;
+  color: white;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  left: 50px;
+  bottom: 40px;
   font-weight: bold;
 }
-.services-page .page-wrapper .content {
+.Services-Page .page-wrapper {
+  margin: 0 8.7%;
+}
+.Services-Page .page-wrapper .intro-section {
+  font-size: 1.6rem;
+  margin-top: 55px;
+  margin-bottom: 45px;
+  line-height: 2.5rem;
+}
+.Services-Page .page-wrapper .tabs {
+  display: flex;
+  justify-content: space-between;
+}
+.Services-Page .page-wrapper .tabs .tab {
+  padding: 12px;
+  width: 182px;
+  border: 1px solid black;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+.Services-Page .page-wrapper .tabs .active-tab {
+  background: #5e9fb9;
+  color: white;
+}
+.Services-Page .page-wrapper .content-container {
+  margin-bottom: 80px;
+}
+.Services-Page .page-wrapper .content {
   display: flex;
 }
-.services-page .page-wrapper .content > * {
+.Services-Page .page-wrapper .content > * {
   width: 50%;
 }
-.services-page .page-wrapper .content h3 {
+.Services-Page .page-wrapper .content h3 {
   font-size: 2.4rem;
   font-weight: bold;
 }
-.services-page .page-wrapper .content p {
+.Services-Page .page-wrapper .content p {
   font-size: 1.6rem;
+  line-height: 2.5rem;
 }
-.services-page .page-wrapper .content .text-content {
+.Services-Page .page-wrapper .content img {
+  margin-top: 60px;
+  margin-left: 20px;
+  object-fit: contain;
+}
+.Services-Page .page-wrapper .content .text-content {
   margin-right: 30px;
 }
-.services-page .page-wrapper .content .text-content > * {
+.Services-Page .page-wrapper .content .text-content > * {
   margin: 20px 0;
+}
+footer {
+  background: #828282;
+  padding: 4% 4% 0;
+  color: white;
+  font-size: 1.2rem;
+}
+footer .Footer-Content {
+  display: flex;
+  justify-content: space-around;
+  align-items: unset;
+  margin-bottom: 2%;
+}
+footer .Footer-Content h3 {
+  font-weight: bold;
+}
+footer .Footer-Content h3 {
+  font-weight: bold;
+}
+footer .Footer-Content .Contact-Invite h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+footer .Footer-Content .Contact-Invite input {
+  margin: 1% 1%;
+  padding: 1.1rem 0.8rem;
+  width: 100%;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: 1px transparent;
+}
+footer .Footer-Content .Contact-Invite p {
+  font-size: 1.2rem;
+}
+footer .Footer-Content .New-York,
+footer .Footer-Content .Florida,
+footer .Footer-Content .California {
+  padding: auto 4%;
+}
+footer .Footer-Content .New-York p,
+footer .Footer-Content .Florida p,
+footer .Footer-Content .California p {
+  padding: 3% 20% 3% 1%;
+}
+@media (max-width: 500px) {
+  footer .Footer-Content .New-York .New-York,
+  footer .Footer-Content .Florida .New-York,
+  footer .Footer-Content .California .New-York,
+  footer .Footer-Content .New-York .Florida,
+  footer .Footer-Content .Florida .Florida,
+  footer .Footer-Content .California .Florida,
+  footer .Footer-Content .New-York .California,
+  footer .Footer-Content .Florida .California,
+  footer .Footer-Content .California .California {
+    padding-top: 10px;
+  }
+  footer .Footer-Content .New-York p,
+  footer .Footer-Content .Florida p,
+  footer .Footer-Content .California p {
+    padding: unset;
+    margin-top: 8px;
+  }
+}
+footer .Footer-Content .locations {
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .Footer-Content .locations .New-York,
+footer .Footer-Content .locations .California,
+footer .Footer-Content .locations .Florida {
+  margin: 20px 0;
+}
+@media (max-width: 500px) {
+  footer .Footer-Content {
+    display: block;
+  }
+}
+.Copyright {
+  display: flex;
+  justify-content: center;
+  align-items: inherit;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .Copyright {
+    display: block;
+  }
+}
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  color: #fff;
+  background-color: #333;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  display: none;
 }

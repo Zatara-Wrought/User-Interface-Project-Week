@@ -1,17 +1,4 @@
 .Home-Page {
-  .mobile {
-    display: none;
-  }
-
-  @media @phone {
-    .desktop {
-      display: none;
-    }
-
-    .mobile {
-      display: initial;
-    }
-  }
   @media @phone {
     max-width: 500px;
     .size(100%, auto);
@@ -86,6 +73,9 @@
         .content1,
         .content2 {
           margin-top: 4%;
+        }
+        .img-1 {
+          order: -1;
         }
         .img-1,
         .img-2 {
